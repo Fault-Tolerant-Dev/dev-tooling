@@ -1,0 +1,45 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "{{user `project_id`}}",
+      "machine_type": "{{user `machine_type`}}",
+      "disk_size": 10,
+      "disk_type": "pd-ssd",
+      "region": "{{user `region`}}",
+      "zone": "{{user `zone`}}",
+      "account_file": "{{user `account_file`}}",
+      "network_project_id": "{{user `network_project_id`}}",
+      "subnetwork": "projects/{{user `network_project_id`}}/regions/us-west2/subnetworks/{{user `subnet_name`}}",
+      "address": "packer",
+      "tags": "{{user `tags`}}",
+      "ssh_username": "packer",
+      "source_image_family": "{{user `source_image_family`}}",
+      "image_description": "{{user `image_description`}}",
+      "image_name": "{{user `image_name`}}-v{{isotime \"200601021504\"}}",
+      "image_family": "{{user `image_family`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "install-logging-agent.sh",
+      "destination": "/tmp/install-logging-agent.sh"
+    },
+    {
+      "type": "file",
+      "source": "install-monitoring-agent.sh",
+      "destination": "/tmp/install-monitoring-agent.sh"
+    },
+    {
+      "type": "shell",
+      "script": "install-logging-agent.sh",
+      "execute_command": "sudo bash /tmp/install-logging-agent.sh"
+    },
+    {
+      "type": "shell",
+      "script": "install-monitoring-agent.sh",
+      "execute_command": "sudo bash /tmp/install-monitoring-agent.sh"
+    }
+  ]
+}

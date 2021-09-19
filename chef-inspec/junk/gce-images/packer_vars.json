@@ -1,0 +1,11 @@
+{
+  "source_image": "debian-10-buster-v20210316",
+  "machine_type": "n1-standard-1",
+  "region": "us-central1",
+  "zone": "us-central1-c",
+  "project_id": "cloudbuild-307820",
+  "image_description": "Base GCE Image",
+  "image_name": "base-image",
+  "image_family": "base",
+  "tags": "base"
+}

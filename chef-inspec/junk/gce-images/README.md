@@ -1,0 +1,1 @@
+packer build -var-file=packer_vars.json packer_config.json  

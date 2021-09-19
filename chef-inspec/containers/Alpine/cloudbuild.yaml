@@ -1,0 +1,10 @@
+steps:
+- name: 'gcr.io/$PROJECT_ID/docker'
+  entrypoint: 'docker'
+  args:
+  - 'build'
+  - '--tag=gcr.io/$PROJECT_ID/alpine'
+  - '--file=Dockerfile'
+  - '.'
+images:
+- 'gcr.io/$PROJECT_ID/alpine'

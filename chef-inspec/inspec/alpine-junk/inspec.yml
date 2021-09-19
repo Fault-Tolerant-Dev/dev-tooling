@@ -1,0 +1,11 @@
+name: alpine-cis-benchmark
+title: Alpine CIS Benchmark
+maintainer: Brandon Cerniglia
+copyright: Evilmachine
+copyright_email: bcerniglia@gmail.com
+license: Apache-2.0
+summary: add this 
+version: 0.1.0
+depends:
+  - name: cis-dil-benchmark
+    url: https://github.com/dev-sec/cis-dil-benchmark/tree/0.4.10

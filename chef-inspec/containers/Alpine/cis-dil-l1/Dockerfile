@@ -1,0 +1,3 @@
+ARG CB_PROJECT_ID
+FROM gcr.io/${CB_PROJECT_ID}/docker
+

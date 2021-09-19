@@ -1,0 +1,27 @@
+#!/bin/bash
+touch 1_1_filesystem_configuration.rb
+touch 1_2_configure_software_updates.rb
+touch 1_3_filesystem_integrity_checking.rb
+touch 1_4_secure_boot_settings.rb
+touch 1_5_additional_process_hardening.rb
+touch 1_6_mandatory_access_control.rb
+touch 1_7_warning_banners.rb
+touch 1_8_ensure_patches.rb
+touch 2_1_inetd_services.rb
+touch 2_2_special_purpose_services.rb
+touch 2_3_service_clients.rb
+touch 3_1_network_parameters_host_only.rb
+touch 3_2_network_parameters_host_and_router.rb
+touch 3_3_tcp_wrappers.rb
+touch 3_4_uncommon_network_protocols.rb
+touch 3_5_firewall_configuration.rb
+touch 3_6_wireless_interfaces.rb
+touch 3_7_disable_ipv6.rb
+touch 4_1_configure_system_accounting_auditd.rb
+touch 4_2_configure_logging.rb
+touch 5_1_configure_cron.rb
+touch 5_2_ssh_server_configuration.rb
+touch 5_3_configure_pam.rb
+touch 5_4_user_accounts_and_environments.rb
+touch 6_1_system_file_permissions.rb
+touch 6_2_user_and_group_settings.rb

@@ -1,0 +1,21 @@
+name: alpine-test
+title: InSpec Profile
+maintainer: The Authors
+copyright: The Authors
+copyright_email: you@example.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile
+version: 0.1.0
+supports:
+  platform: os
+inputs:
+    - name: cis_level
+      required: true
+      description: 'CIS profile level to audit'
+      value: 2
+      type: numeric
+#    - name: is_container
+#      required: true
+#      description: 'Is container'
+#      value: yes
+#      type: string

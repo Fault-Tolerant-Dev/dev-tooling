@@ -1,0 +1,12 @@
+steps:
+- name: 'gcr.io/$PROJECT_ID/chef'
+  entrypoint: 'bash'
+  args:
+  - '-eEuo'
+  - 'pipefail'
+  - '-c'
+  - |-
+    /usr/bin/docker run -itd --name inspec_me gcr.io/$PROJECT_ID/alpine:latest && \
+    /usr/bin/inspec exec https://github.com/dev-sec/cis-dil-benchmark/archive/master.tar.gz --input cis_level=1 -t docker://inspec_me
+images:
+- 'gcr.io/$PROJECT_ID/alpine-clean'

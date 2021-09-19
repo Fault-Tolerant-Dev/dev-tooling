@@ -1,0 +1,19 @@
+name: test-profile
+title: cis-dil-benchmark
+maintainer: The Authors
+copyright: The Authors
+copyright_email: you@example.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile For Linux
+version: 0.1.0
+inspec_version: '>= 2.3.5'
+attributes:
+- name: gcp_project_id
+  required: true
+  description: 'CIS Distribution Independent Linux Benchmark Profile'
+  type: string
+depends:
+- name: cis-dil-benchmark
+  url: https://github.com/dev-sec/cis-dil-benchmark
+supports:
+- platform: gcp

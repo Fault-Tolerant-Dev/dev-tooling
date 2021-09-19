@@ -1,0 +1,18 @@
+{
+  "provisioners": [
+    {
+      "type": "inspec",
+      "profile": "https://github.com/dev-sec/cis-dil-benchmark"
+    }
+  ],
+
+  "builders": [
+    {
+      "type": "docker",
+      "image": "alpine",
+      "commit": true
+    }  
+]
+}
+
+

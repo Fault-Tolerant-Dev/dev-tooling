@@ -1,0 +1,293 @@
+#
+# The "include_controls" command brings in all controls for the named profile.
+# In this example, all controls from the "linux-baseline" profile will be run
+# against our target every time our profile is executed.
+#
+# Profiles to be included/inherited must be defined in the "depends" section of
+# the inspec.yml.
+#
+include_controls 'cis-dil-benchmark' do
+  # In the event there is a control from an inherited profile that should not be
+  # run, it can be skipped with the "skip_control" command. In this example,
+  # InSpec will not run the "os-05" control from the "linux-baseline" profile
+  # even though we've told InSpec to run all controls from "linux-baseline".
+# Kernel Modules - Not Relevant
+skip_control 'cis-dil-benchmark-1.1.1.1'
+skip_control 'cis-dil-benchmark-1.1.1.2'
+skip_control 'cis-dil-benchmark-1.1.1.3'
+skip_control 'cis-dil-benchmark-1.1.1.4'
+skip_control 'cis-dil-benchmark-1.1.1.5'
+skip_control 'cis-dil-benchmark-1.1.1.6'
+skip_control 'cis-dil-benchmark-1.1.1.7'
+skip_control 'cis-dil-benchmark-1.1.1.8'
+skip_control 'cis-dil-benchmark-1.1.23'
+
+# Seperate Partitions - Not Relevant
+skip_control 'cis-dil-benchmark-1.1.2'
+skip_control 'cis-dil-benchmark-1.1.3'
+skip_control 'cis-dil-benchmark-1.1.4'
+skip_control 'cis-dil-benchmark-1.1.5'
+
+# No AIDE 
+skip_control 'cis-dil-benchmark-1.3.1'
+skip_control 'cis-dil-benchmark-1.3.2'
+
+# No Bootloader
+skip_control 'cis-dil-benchmark-1.4.1'
+skip_control 'cis-dil-benchmark-1.4.2'
+skip_control 'cis-dil-benchmark-1.4.3'
+
+# No ntpd
+skip_control 'cis-dil-benchmark-2.2.1.2'
+
+# No iptables
+skip_control 'cis-dil-benchmark-3.5.1.1'
+skip_control 'cis-dil-benchmark-3.5.1.2'
+skip_control 'cis-dil-benchmark-3.5.1.3'
+skip_control 'cis-dil-benchmark-3.5.2.1'
+skip_control 'cis-dil-benchmark-3.5.2.2'
+skip_control 'cis-dil-benchmark-3.5.2.3'
+skip_control 'cis-dil-benchmark-3.5.3'
+
+# Logs are done via STDOUT/STDERR
+skip_control 'cis-dil-benchmark-4.2.1.3'
+skip_control 'cis-dil-benchmark-4.2.1.4'
+skip_control 'cis-dil-benchmark-4.2.1.5'
+skip_control 'cis-dil-benchmark-4.2.1.1'
+
+# No Cron
+skip_control 'cis-dil-benchmark-5.1.1'
+skip_control 'cis-dil-benchmark-5.1.2'
+skip_control 'cis-dil-benchmark-5.1.3'
+skip_control 'cis-dil-benchmark-5.1.4'
+skip_control 'cis-dil-benchmark-5.1.5'
+skip_control 'cis-dil-benchmark-5.1.6'
+skip_control 'cis-dil-benchmark-5.1.7'
+skip_control 'cis-dil-benchmark-5.1.8'
+
+# No ssh
+skip_control 'cis-dil-benchmark-5.2.1'
+skip_control 'cis-dil-benchmark-5.2.13'
+skip_control 'cis-dil-benchmark-5.2.14'
+skip_control 'cis-dil-benchmark-5.2.15'
+skip_control 'cis-dil-benchmark-5.2.18'
+
+# No sysctl 
+skip_control 'cis-dil-benchmark-3.1.1'
+skip_control 'cis-dil-benchmark-3.1.2'
+skip_control 'cis-dil-benchmark-3.2.1'
+skip_control 'cis-dil-benchmark-3.2.2'
+skip_control 'cis-dil-benchmark-3.2.3'
+skip_control 'cis-dil-benchmark-3.2.4'
+skip_control 'cis-dil-benchmark-3.2.5'
+skip_control 'cis-dil-benchmark-3.2.6'
+skip_control 'cis-dil-benchmark-3.2.7'
+skip_control 'cis-dil-benchmark-3.2.8'
+skip_control 'cis-dil-benchmark-3.2.9'
+
+# No tcpd
+skip_control 'cis-dil-benchmark-3.3.1'
+skip_control 'cis-dil-benchmark-3.3.2'
+skip_control 'cis-dil-benchmark-3.3.3'
+skip_control 'cis-dil-benchmark-3.3.4'
+skip_control 'cis-dil-benchmark-3.3.5'
+
+# No su
+skip_control 'cis-dil-benchmark-5.6'
+
+
+
+end
+
+#
+# The "require_controls" command allows specific controls from an inherited profile to be executed.
+#
+# In this example, only the controls from the "ssh-baseline" profile that are
+# called out with the "control" command below will be executed when our profile
+# is executed. No other controls from the "ssh-baseline" profile will be
+# executed.
+#
+require_controls 'cis-dil-benchmark' do
+  # Controls "sshd-01" and "sshd-02" will be executed as-is as they are defined
+  # in the "ssh-baseline" profile whenever our profile is executed.
+
+control 'cis-dil-benchmark-1.1.6'
+control 'cis-dil-benchmark-1.1.7'
+control 'cis-dil-benchmark-1.1.8'
+control 'cis-dil-benchmark-1.1.9'
+control 'cis-dil-benchmark-1.1.10'
+control 'cis-dil-benchmark-1.1.11'
+control 'cis-dil-benchmark-1.1.12'
+control 'cis-dil-benchmark-1.1.13'
+control 'cis-dil-benchmark-1.1.14'
+control 'cis-dil-benchmark-1.1.15'
+control 'cis-dil-benchmark-1.1.16'
+control 'cis-dil-benchmark-1.1.17'
+control 'cis-dil-benchmark-1.1.18'
+control 'cis-dil-benchmark-1.1.19'
+control 'cis-dil-benchmark-1.1.20'
+control 'cis-dil-benchmark-1.1.21'
+control 'cis-dil-benchmark-1.1.22'
+control 'cis-dil-benchmark-1.1.23'
+control 'cis-dil-benchmark-1.2.1'
+control 'cis-dil-benchmark-1.2.2'
+control 'cis-dil-benchmark-1.4.4'
+control 'cis-dil-benchmark-1.5.1'
+control 'cis-dil-benchmark-1.5.2'
+control 'cis-dil-benchmark-1.5.3'
+control 'cis-dil-benchmark-1.5.4'
+control 'cis-dil-benchmark-1.6.1.1'
+control 'cis-dil-benchmark-1.6.2.1'
+control 'cis-dil-benchmark-1.6.2.2'
+control 'cis-dil-benchmark-1.6.2.3'
+control 'cis-dil-benchmark-1.6.2.4'
+control 'cis-dil-benchmark-1.6.2.5'
+control 'cis-dil-benchmark-1.6.2.6'
+control 'cis-dil-benchmark-1.6.3.1'
+control 'cis-dil-benchmark-1.6.3.2'
+control 'cis-dil-benchmark-1.7.1.1'
+control 'cis-dil-benchmark-1.7.1.2'
+control 'cis-dil-benchmark-1.7.1.3'
+control 'cis-dil-benchmark-1.7.1.4'
+control 'cis-dil-benchmark-1.7.1.5'
+control 'cis-dil-benchmark-1.7.1.6'
+control 'cis-dil-benchmark-1.7.2'
+control 'cis-dil-benchmark-1.8'
+control 'cis-dil-benchmark-2.1.1'
+control 'cis-dil-benchmark-2.1.2'
+control 'cis-dil-benchmark-2.1.3'
+control 'cis-dil-benchmark-2.1.4'
+control 'cis-dil-benchmark-2.1.5'
+control 'cis-dil-benchmark-2.1.6'
+control 'cis-dil-benchmark-2.1.7'
+control 'cis-dil-benchmark-2.1.8'
+control 'cis-dil-benchmark-2.1.9'
+control 'cis-dil-benchmark-2.1.10'
+control 'cis-dil-benchmark-2.2.1.1'
+control 'cis-dil-benchmark-2.2.1.3'
+control 'cis-dil-benchmark-2.2.1.4'
+control 'cis-dil-benchmark-2.2.2'
+control 'cis-dil-benchmark-2.2.3'
+control 'cis-dil-benchmark-2.2.4'
+control 'cis-dil-benchmark-2.2.5'
+control 'cis-dil-benchmark-2.2.6'
+control 'cis-dil-benchmark-2.2.7'
+control 'cis-dil-benchmark-2.2.8'
+control 'cis-dil-benchmark-2.2.9'
+control 'cis-dil-benchmark-2.2.10'
+control 'cis-dil-benchmark-2.2.11'
+control 'cis-dil-benchmark-2.2.12'
+control 'cis-dil-benchmark-2.2.13'
+control 'cis-dil-benchmark-2.2.14'
+control 'cis-dil-benchmark-2.2.15'
+control 'cis-dil-benchmark-2.2.16'
+control 'cis-dil-benchmark-2.2.17'
+control 'cis-dil-benchmark-2.3.1'
+control 'cis-dil-benchmark-2.3.2'
+control 'cis-dil-benchmark-2.3.3'
+control 'cis-dil-benchmark-2.3.4'
+control 'cis-dil-benchmark-2.3.5'
+control 'cis-dil-benchmark-3.4.1'
+control 'cis-dil-benchmark-3.4.2'
+control 'cis-dil-benchmark-3.4.3'
+control 'cis-dil-benchmark-3.4.4'
+control 'cis-dil-benchmark-3.6'
+control 'cis-dil-benchmark-3.7'
+control 'cis-dil-benchmark-4.1.1.1'
+control 'cis-dil-benchmark-4.1.1.2'
+control 'cis-dil-benchmark-4.1.1.3'
+control 'cis-dil-benchmark-4.1.2'
+control 'cis-dil-benchmark-4.1.3'
+control 'cis-dil-benchmark-4.1.4'
+control 'cis-dil-benchmark-4.1.5'
+control 'cis-dil-benchmark-4.1.6'
+control 'cis-dil-benchmark-4.1.7'
+control 'cis-dil-benchmark-4.1.8'
+control 'cis-dil-benchmark-4.1.9'
+control 'cis-dil-benchmark-4.1.10'
+control 'cis-dil-benchmark-4.1.11'
+control 'cis-dil-benchmark-4.1.12'
+control 'cis-dil-benchmark-4.1.13'
+control 'cis-dil-benchmark-4.1.14'
+control 'cis-dil-benchmark-4.1.15'
+control 'cis-dil-benchmark-4.1.16'
+control 'cis-dil-benchmark-4.1.17'
+control 'cis-dil-benchmark-4.1.18'
+control 'cis-dil-benchmark-4.1.19'
+control 'cis-dil-benchmark-4.2.1.2'
+control 'cis-dil-benchmark-4.2.1.6'
+control 'cis-dil-benchmark-4.2.2.1'
+control 'cis-dil-benchmark-4.2.2.2'
+control 'cis-dil-benchmark-4.2.2.3'
+control 'cis-dil-benchmark-4.3'
+control 'cis-dil-benchmark-5.2.4'
+control 'cis-dil-benchmark-5.2.5'
+control 'cis-dil-benchmark-5.2.6'
+control 'cis-dil-benchmark-5.2.7'
+control 'cis-dil-benchmark-5.2.8'
+control 'cis-dil-benchmark-5.2.9'
+control 'cis-dil-benchmark-5.2.10'
+control 'cis-dil-benchmark-5.2.11'
+control 'cis-dil-benchmark-5.2.12'
+control 'cis-dil-benchmark-5.2.16'
+control 'cis-dil-benchmark-5.2.17'
+control 'cis-dil-benchmark-5.2.19'
+control 'cis-dil-benchmark-5.2.20'
+control 'cis-dil-benchmark-5.2.21'
+control 'cis-dil-benchmark-5.2.22'
+control 'cis-dil-benchmark-5.2.23'
+control 'cis-dil-benchmark-5.3.2'
+control 'cis-dil-benchmark-5.3.3'
+control 'cis-dil-benchmark-5.3.4'
+control 'cis-dil-benchmark-5.4.1.1'
+control 'cis-dil-benchmark-5.4.1.2'
+control 'cis-dil-benchmark-5.4.1.3'
+control 'cis-dil-benchmark-5.4.1.4'
+control 'cis-dil-benchmark-5.4.3'
+control 'cis-dil-benchmark-5.4.4'
+control 'cis-dil-benchmark-5.4.5'
+control 'cis-dil-benchmark-5.5'
+control 'cis-dil-benchmark-6.1.1'
+control 'cis-dil-benchmark-6.1.2'
+control 'cis-dil-benchmark-6.1.3'
+control 'cis-dil-benchmark-6.1.4'
+control 'cis-dil-benchmark-6.1.5'
+control 'cis-dil-benchmark-6.1.6'
+control 'cis-dil-benchmark-6.1.7'
+control 'cis-dil-benchmark-6.1.8'
+control 'cis-dil-benchmark-6.1.9'
+control 'cis-dil-benchmark-6.1.10'
+control 'cis-dil-benchmark-6.1.11'
+control 'cis-dil-benchmark-6.1.12'
+control 'cis-dil-benchmark-6.1.13'
+control 'cis-dil-benchmark-6.1.14'
+control 'cis-dil-benchmark-6.2.1'
+control 'cis-dil-benchmark-6.2.2'
+control 'cis-dil-benchmark-6.2.3'
+control 'cis-dil-benchmark-6.2.4'
+control 'cis-dil-benchmark-6.2.5'
+control 'cis-dil-benchmark-6.2.6'
+control 'cis-dil-benchmark-6.2.7'
+control 'cis-dil-benchmark-6.2.8'
+control 'cis-dil-benchmark-6.2.9'
+control 'cis-dil-benchmark-6.2.10'
+control 'cis-dil-benchmark-6.2.11'
+control 'cis-dil-benchmark-6.2.12'
+control 'cis-dil-benchmark-6.2.14'
+control 'cis-dil-benchmark-6.2.15'
+control 'cis-dil-benchmark-6.2.16'
+control 'cis-dil-benchmark-6.2.17'
+control 'cis-dil-benchmark-6.2.18'
+control 'cis-dil-benchmark-6.2.19'
+control 'cis-dil-benchmark-6.2.20'
+
+  # Just like the "include_controls" command, controls inherited from another
+  # profile can be modified if necessary without requiring the control or
+  # profile to be copied and maintained separately. In this example, the
+  # "sshd-03" control will be executed every time our profile is executed, but
+  # if it fails, it will only report as a low severity (0.1) instead of the
+  # original critical severity.
+#  control 'sshd-03' do
+#    impact 0.1
+#  end
+end

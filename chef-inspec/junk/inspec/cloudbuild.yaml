@@ -1,0 +1,16 @@
+# In this directory, run the following command to build this builder.
+# $ gcloud builds submit . --config=cloudbuild.yaml
+
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/project0-305914/inspec:${_INSPEC_VERSION}',
+        '-t', 'gcr.io/project0-305914/inspec',
+        '--build-arg', 'INSPEC_VERSION=${_INSPEC_VERSION}',
+        '.']
+substitutions:
+  _INSPEC_VERSION: 4.26.4
+
+images:
+- 'gcr.io/$PROJECT_ID/inspec:latest'
+- 'gcr.io/$PROJECT_ID/inspec:$_INSPEC_VERSION'
+tags: ['cloud-builders-community']
