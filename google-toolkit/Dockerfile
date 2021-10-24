@@ -43,6 +43,7 @@ FROM shellcheck:0.6.0alpine3.14.2 as shellcheck
 FROM hashicorp:0.2.0alpine3.14.2  as hashicorp
 FROM hadolint:1.15.0alpine3.14.2 as hadolint
 FROM bats:0.4.0alpine3.14.2 as bats
+FROM kics:1.4.5alpine3.14.2 as kics
 
 # Step 3
 FROM base:alpine3.14.2
@@ -71,6 +72,7 @@ COPY --from=hadolint /usr/local/bin/hadolint /usr/local/bin/hadolint
 COPY --from=google-cloud /root/.config /root/.config
 COPY --from=google-cloud /google-cloud-sdk /usr/local/google-cloud-sdk
 COPY --from=bats /usr/local /usr/local
+COPY --from=kics /usr/local/kics /usr/local/kics
 
 RUN apk add --no-cache coreutils curl findutils git ca-certificates diffutils rsync gettext libintl bash parallel gmp-dev libc6-compat
 
